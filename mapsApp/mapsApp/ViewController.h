@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
+- (IBAction)setMap:(UISegmentedControl *)sender;
 
 
 @end

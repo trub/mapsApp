@@ -26,4 +26,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)setMap:(UISegmentedControl *)sender {
+    
+    if (sender.selectedSegmentIndex == 0) {
+        NSLog(@"1");
+        
+    } else
+        if (sender.selectedSegmentIndex == 1)  {
+        NSLog(@"2");
+
+    }
+    else
+        if (sender.selectedSegmentIndex == 2)  {
+            NSLog(@"3");
+        }
+}
 @end
