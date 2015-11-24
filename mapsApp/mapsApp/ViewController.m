@@ -29,16 +29,16 @@
 - (IBAction)setMap:(UISegmentedControl *)sender {
     
     if (sender.selectedSegmentIndex == 0) {
-        NSLog(@"1");
+        _mapView.mapType = MKMapTypeStandard;
         
     } else
         if (sender.selectedSegmentIndex == 1)  {
-        NSLog(@"2");
+            _mapView.mapType = MKMapTypeSatellite;
 
     }
     else
         if (sender.selectedSegmentIndex == 2)  {
-            NSLog(@"3");
+            _mapView.mapType = MKMapTypeHybrid;
         }
 }
 @end
