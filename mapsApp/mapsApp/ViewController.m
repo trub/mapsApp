@@ -14,11 +14,20 @@
 
 @implementation ViewController
 
+//@property (strong, nonatomic) CLLocationManager *locationManager;
+
 @synthesize mapView = _mapView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //init maps at code fellows
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6235733, -122.3382575);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
+
+    [self.mapView setRegion:region animated:YES];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
