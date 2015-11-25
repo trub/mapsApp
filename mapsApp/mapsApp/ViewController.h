@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @import MapKit;
+@import CoreLocation;
 
 @interface ViewController : UIViewController {
     MKMapView *mapView;
 }
+
+#pragma mark - Properties
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 

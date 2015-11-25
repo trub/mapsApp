@@ -10,24 +10,50 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
+
 @end
 
 @implementation ViewController
 
-//@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @synthesize mapView = _mapView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    // As of iOS 8, you need to ask for permissions first.
+    [self requestPermissions];
+    
     //init maps at code fellows
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6235733, -122.3382575);
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500.0, 500.0);
 
+
     [self.mapView setRegion:region animated:YES];
 
+
+}
+//
+//-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+//    UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"There was an error retrieving your location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//    [errorAlert show];
+//    NSLog(@"Error: %@",error.description);
+//}
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *crnLoc = [locations lastObject];
+}
+
+- (void)requestPermissions {
     
+    // NSLocationWhenInUseUsageDescription key is required in info.plist. Add valid reason for location use.
+    // Make sure to enable location updates in Simulator.
+    
+    [self setLocationManager:[[CLLocationManager alloc]init]];
+    [self.locationManager requestWhenInUseAuthorization];
 }
 
 - (void)didReceiveMemoryWarning {
