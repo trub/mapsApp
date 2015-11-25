@@ -15,6 +15,7 @@
 		E1CA07751C03CA5F001E52D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1CA07731C03CA5F001E52D1 /* LaunchScreen.storyboard */; };
 		E1CA077D1C03CB49001E52D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CA077C1C03CB49001E52D1 /* MapKit.framework */; };
 		E1CA07831C046A3D001E52D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CA07821C046A3D001E52D1 /* CoreLocation.framework */; };
+		E1CA07871C05B968001E52D1 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CA07861C05B968001E52D1 /* Stack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		E1CA07761C03CA5F001E52D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1CA077C1C03CB49001E52D1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E1CA07821C046A3D001E52D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E1CA07851C05B968001E52D1 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		E1CA07861C05B968001E52D1 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +51,7 @@
 		E1CA07591C03CA5F001E52D1 = {
 			isa = PBXGroup;
 			children = (
-				E1CA07821C046A3D001E52D1 /* CoreLocation.framework */,
-				E1CA077C1C03CB49001E52D1 /* MapKit.framework */,
+				E1CA07841C05B926001E52D1 /* Frameworks */,
 				E1CA07641C03CA5F001E52D1 /* mapsApp */,
 				E1CA07631C03CA5F001E52D1 /* Products */,
 			);
@@ -75,6 +77,8 @@
 				E1CA07731C03CA5F001E52D1 /* LaunchScreen.storyboard */,
 				E1CA07761C03CA5F001E52D1 /* Info.plist */,
 				E1CA07651C03CA5F001E52D1 /* Supporting Files */,
+				E1CA07851C05B968001E52D1 /* Stack.h */,
+				E1CA07861C05B968001E52D1 /* Stack.m */,
 			);
 			path = mapsApp;
 			sourceTree = "<group>";
@@ -85,6 +89,15 @@
 				E1CA07661C03CA5F001E52D1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1CA07841C05B926001E52D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA07821C046A3D001E52D1 /* CoreLocation.framework */,
+				E1CA077C1C03CB49001E52D1 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CA07871C05B968001E52D1 /* Stack.m in Sources */,
 				E1CA076D1C03CA5F001E52D1 /* ViewController.m in Sources */,
 				E1CA076A1C03CA5F001E52D1 /* AppDelegate.m in Sources */,
 				E1CA07671C03CA5F001E52D1 /* main.m in Sources */,
