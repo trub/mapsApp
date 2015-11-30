@@ -22,6 +22,7 @@
                                 <animations/>
                                 <gestureRecognizers/>
                                 <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SP4-Du-wtu"/>
                                     <outletCollection property="gestureRecognizers" destination="oZc-Hh-B8B" appends="YES" id="7Bj-jd-jdo"/>
                                 </connections>
                             </mapView>
@@ -122,7 +123,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="PWC-4E-KDA" id="fXd-vW-D4S"/>
-                        <segue destination="CTB-1I-pd3" kind="push" identifier="LocationDetailViewController" id="fzR-38-NUF"/>
+                        <segue destination="dEo-P9-4CE" kind="modal" identifier="AddReminderSegue" id="fzR-38-NUF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,7 +135,7 @@
             </objects>
             <point key="canvasLocation" x="149" y="319"/>
         </scene>
-        <!--Add Reminder Detail View Controller-->
+        <!--Set Reminder-->
         <scene sceneID="xVa-3j-moU">
             <objects>
                 <viewController id="CTB-1I-pd3" customClass="AddReminderDetailViewController" sceneMemberID="viewController">
@@ -148,9 +149,30 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pc6-wD-5ca"/>
+                    <navigationItem key="navigationItem" title="Set Reminder" id="pc6-wD-5ca">
+                        <barButtonItem key="leftBarButtonItem" title="cancel" id="kdr-bY-6QE"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wze-XB-rh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1142" y="319"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x8f-Xz-74C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dEo-P9-4CE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ud8-fp-8VE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CTB-1I-pd3" kind="relationship" relationship="rootViewController" id="QkP-5I-Wdn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Cd-cs-Nfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="610" y="319"/>
         </scene>

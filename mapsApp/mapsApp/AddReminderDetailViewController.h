@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSString* annotationSubtitle;
 @property CLLocationCoordinate2D coordinate;
 
+
 @end
 

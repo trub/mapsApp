@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"%@", self.annotationSubtitle);
+    NSLog(@"%@", self.annotationTitle);
+    NSLog(@"%f %f", self.coordinate.latitude, self.coordinate.longitude);
 }
 
 - (void)didReceiveMemoryWarning {

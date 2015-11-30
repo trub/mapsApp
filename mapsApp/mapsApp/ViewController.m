@@ -24,6 +24,8 @@
     [super viewDidLoad];
     [self requestPermissions];
     [self.mapView setShowsUserLocation:YES];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,11 +67,11 @@
 
 #pragma mark - MKMapViewDelegate
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id<MKAnnotation>)annotation {
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;
     }
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomLocationPin"];
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[theMapView dequeueReusableAnnotationViewWithIdentifier:@"CustomLocationPin"];
     annotationView.annotation = annotation;
     if (!annotationView) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomLocationPin"];
@@ -80,8 +82,8 @@
     return annotationView;
 }
 
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    [self performSegueWithIdentifier:@"LocationDetailViewController" sender:view];
+- (void)mapView:(MKMapView *)theMapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    [self performSegueWithIdentifier:@"AddReminderSegue" sender:view];
 }
 
 #pragma mark - LocationServiceDelegate
@@ -137,16 +139,22 @@
     }
     
 }
-- (IBAction)longPressGestureRecognized:(UIGestureRecognizer*)sender {
+- (IBAction)longPressGestureRecognized:(UILongPressGestureRecognizer*)sender {
+    
     if (sender.state == UIGestureRecognizerStateBegan) {
+        
         CGPoint point = [sender locationInView:self.mapView];
         CLLocationCoordinate2D coordinate = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
+        
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
         annotation.coordinate = coordinate;
         annotation.title = @"New Location";
-        annotation.subtitle = @"What are we doing here?";
+        annotation.subtitle = @"Yolo cholo?";
+        
         [self.mapView addAnnotation:annotation];
     }
 }
+
+
 
 @end
