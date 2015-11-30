@@ -24,4 +24,8 @@
 
 +(LocationAPI *)sharedAPI;
 
+- (void)beginLocationUpdate;
+- (void)endLocationUpdate;
+
+
 @end

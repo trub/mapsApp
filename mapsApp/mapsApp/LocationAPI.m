@@ -11,9 +11,6 @@
 
 @interface LocationAPI () <CLLocationManagerDelegate>
 
-- (void)beginLocationUpdate;
-- (void)endLocationUpdate;
-
 @end
 
 @implementation LocationAPI
@@ -41,11 +38,12 @@
 }
 
 - (void)beginLocationUpdate {
-    [self beginLocationUpdate];
+    [[[LocationAPI sharedAPI]locationManager]startUpdatingLocation];
 }
 
 - (void)endLocationUpdate {
-    [self endLocationUpdate];
+    [[[LocationAPI sharedAPI]locationManager]stopUpdatingLocation];
+
 }
 
 
