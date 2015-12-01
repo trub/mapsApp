@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "LocationAPI.h"
 #import "AddReminderDetailViewController.h"
+#import "Reminder.h"
 
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
@@ -49,6 +50,9 @@
     //set location
     [[LocationAPI sharedAPI] setDelegate:self];
     [[LocationAPI sharedAPI] beginLocationUpdate];
+
+    [self fetchRegions];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -67,18 +71,6 @@
     [self.locationManager requestWhenInUseAuthorization];
 }
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"AddReminderDetailViewController"]) {
-//        if ([segue.destinationViewController isKindOfClass:[AddReminderDetailViewController class]]) {
-//            AddReminderDetailViewController *detailVC = (AddReminderDetailViewController *)segue.destinationViewController;
-//            MKAnnotationView *annotation = (MKAnnotationView *)sender;
-//            detailVC.annotationTitle = annotation.annotation.title;
-//            detailVC.annotationSubtitle = annotation.annotation.subtitle;
-//            
-//            
-//        }
-//    }
-//}
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -95,8 +87,6 @@
             detailVC.completion = ^(MKCircle *circle) {
 
                 [weakSelf.mapView removeAnnotation:annotation.annotation];
-                [weakSelf.mapView addOverlay:circle];
-
                 NSLog(@"%@", [[LocationAPI sharedAPI]locationManager]);
 
             };
@@ -212,9 +202,31 @@
 
 #pragma mark - Parse
 
+- (void)fetchRegions {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Reminder"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        
+        for (MKCircle *circle in self.mapView.overlays) {
+            [self.mapView removeOverlay:circle];
+        }
+        
+        NSMutableArray *regions = [[NSMutableArray alloc]init];
+        
+        for (Reminder *reminder in objects) {
+            MKCircle *circle = [MKCircle circleWithCenterCoordinate:CLLocationCoordinate2DMake(reminder.location.latitude, reminder.location.longitude) radius:50.0 /*modify this*/];
+            
+            [regions addObject:circle];
+        }
+        
+        [self.mapView addOverlays:regions];
+        
+    }];
+    
+}
+
 - (void)login {
     if (![PFUser currentUser]) {
-        
         PFLogInViewController *loginViewController = [[PFLogInViewController alloc]init];
         loginViewController.delegate = self;
         
