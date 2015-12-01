@@ -36,6 +36,7 @@
     [self login];
     
     [self requestPermissions];
+
 }
 
 - (void)didReceiveMemoryWarning {
