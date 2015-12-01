@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PWC-4E-KDA">
-                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PWC-4E-KDA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <animations/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -114,7 +114,7 @@
                     <navigationItem key="navigationItem" title="Chipotle Maps" id="Yah-yA-7fy"/>
                     <connections>
                         <outlet property="mapView" destination="PWC-4E-KDA" id="fXd-vW-D4S"/>
-                        <segue destination="dEo-P9-4CE" kind="modal" identifier="AddReminderSegue" id="fzR-38-NUF"/>
+                        <segue destination="CTB-1I-pd3" kind="push" identifier="AddReminderSegue" id="nkK-2G-Zoh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -135,37 +135,63 @@
                         <viewControllerLayoutGuide type="bottom" id="FDL-3D-0xp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VuE-tm-3vL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMT-w3-UTH">
+                                <rect key="frame" x="0.0" y="1" width="320" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Mgf-zd-47Z"/>
+                                </constraints>
+                                <color key="textColor" red="0.59723949432373047" green="0.59734499454498291" blue="0.5972328782081604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set a radius" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LR4-jJ-0zT">
+                                <rect key="frame" x="0.0" y="61" width="320" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mXH-zV-wNa"/>
+                                </constraints>
+                                <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTo-iU-xlI">
+                                <rect key="frame" x="0.0" y="120" width="320" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.31529593467712402" green="0.75813740491867065" blue="0.70268434286117554" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="i3h-Tn-35u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Set it now!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.96493953466415405" green="1" blue="0.99924474954605103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FMT-w3-UTH" firstAttribute="top" secondItem="VuE-tm-3vL" secondAttribute="top" constant="1" id="3GG-yF-YDJ"/>
+                            <constraint firstItem="FMT-w3-UTH" firstAttribute="leading" secondItem="VuE-tm-3vL" secondAttribute="leading" id="KCa-hk-nd7"/>
+                            <constraint firstItem="LR4-jJ-0zT" firstAttribute="leading" secondItem="VuE-tm-3vL" secondAttribute="leading" id="QnN-os-rMP"/>
+                            <constraint firstAttribute="trailing" secondItem="LR4-jJ-0zT" secondAttribute="trailing" id="UEX-ur-nMa"/>
+                            <constraint firstItem="sTo-iU-xlI" firstAttribute="top" secondItem="LR4-jJ-0zT" secondAttribute="bottom" constant="-1" id="gRT-Ay-pUb"/>
+                            <constraint firstAttribute="trailing" secondItem="sTo-iU-xlI" secondAttribute="trailing" id="heb-yI-7fO"/>
+                            <constraint firstAttribute="trailing" secondItem="FMT-w3-UTH" secondAttribute="trailing" id="lYW-aQ-yCK"/>
+                            <constraint firstItem="LR4-jJ-0zT" firstAttribute="top" secondItem="FMT-w3-UTH" secondAttribute="top" constant="60" id="r8Z-x3-Hvv"/>
+                            <constraint firstItem="sTo-iU-xlI" firstAttribute="leading" secondItem="VuE-tm-3vL" secondAttribute="leading" id="tuu-a1-ocJ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Set Reminder" id="pc6-wD-5ca">
-                        <barButtonItem key="leftBarButtonItem" title="cancel" id="kdr-bY-6QE"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Set Reminder" id="pc6-wD-5ca"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wze-XB-rh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206" y="319"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="x8f-Xz-74C">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dEo-P9-4CE" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ud8-fp-8VE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="CTB-1I-pd3" kind="relationship" relationship="rootViewController" id="QkP-5I-Wdn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Cd-cs-Nfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1674" y="319"/>
+            <point key="canvasLocation" x="1671" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Yr-6r-3og">
