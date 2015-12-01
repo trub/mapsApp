@@ -147,7 +147,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96493953466415405" green="1" blue="0.99924474954605103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Set Reminder" id="pc6-wD-5ca">
                         <barButtonItem key="leftBarButtonItem" title="cancel" id="kdr-bY-6QE"/>

@@ -7,6 +7,7 @@
 //
 
 #import "AddReminderDetailViewController.h"
+#import <Parse/Parse.h>
 
 @interface AddReminderDetailViewController ()
 

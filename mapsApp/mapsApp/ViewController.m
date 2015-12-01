@@ -7,9 +7,14 @@
 //
 
 #import "ViewController.h"
+@import CoreLocation;
+#import "LocationAPI.h"
+#import "AddReminderDetailViewController.h"
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 
-@interface ViewController () <LocationAPIDelegate, MKMapViewDelegate>
+@interface ViewController () <LocationAPIDelegate, MKMapViewDelegate, PFLogInViewControllerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 - (IBAction)longPressGestureRecognized:(id)sender;
@@ -24,7 +29,8 @@
     [super viewDidLoad];
     [self requestPermissions];
     [self.mapView setShowsUserLocation:YES];
-
+    
+    //add parse login
     
 }
 
@@ -33,6 +39,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    //set location
     [[LocationAPI sharedAPI] setDelegate:self];
     [[LocationAPI sharedAPI] beginLocationUpdate];
 }
@@ -154,6 +163,43 @@
         [self.mapView addAnnotation:annotation];
     }
 }
+
+
+#pragma mark - Parse
+
+- (void)login {
+    if (![PFUser currentUser]) {
+        
+        PFLogInViewController *loginViewController = [[PFLogInViewController alloc]init];
+        loginViewController.delegate = self;
+        
+        [self presentViewController:loginViewController animated:NO completion:nil];
+    }
+    else {
+        [self setupAdditionalUI];
+    }
+}
+
+- (void)setupAdditionalUI {
+    UIBarButtonItem *signoutButton = [[UIBarButtonItem alloc]initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(signout)];
+    self.navigationItem.leftBarButtonItem = signoutButton;
+}
+
+- (void)signout {
+    [PFUser logOut];
+    [self login];
+}
+
+// Delegate
+
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self setupAdditionalUI];
+}
+
+
+// Delegate
+
 
 
 
