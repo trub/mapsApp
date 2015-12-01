@@ -6,10 +6,12 @@
 //  Copyright © 2015 matthew weintrub. All rights reserved.
 //
 
-#import "ViewController.h"
 @import CoreLocation;
+
+#import "ViewController.h"
 #import "LocationAPI.h"
 #import "AddReminderDetailViewController.h"
+
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
@@ -27,11 +29,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestPermissions];
+    [self.mapView setDelegate:self];
     [self.mapView setShowsUserLocation:YES];
     
     //add parse login
+    [self login];
     
+    [self requestPermissions];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -196,10 +200,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     [self setupAdditionalUI];
 }
-
-
-// Delegate
-
 
 
 

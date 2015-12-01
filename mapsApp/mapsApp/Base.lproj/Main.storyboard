@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Mv-y5-Cor">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chipotle Maps-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PWC-4E-KDA">
-                                <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PWC-4E-KDA">
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <animations/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -27,7 +27,7 @@
                                 </connections>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UY5-h3-X9t">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <animations/>
                                 <items>
                                     <barButtonItem style="plain" id="3UW-n6-tbc">
@@ -48,7 +48,7 @@
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvP-o2-5IN">
-                                <rect key="frame" x="256" y="425" width="44" height="44"/>
+                                <rect key="frame" x="256" y="361" width="44" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.24284848821425831" blue="0.10806752384135709" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2N-Eo-zp3">
-                                <rect key="frame" x="256" y="358" width="44" height="44"/>
+                                <rect key="frame" x="256" y="294" width="44" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.51865443781428788" blue="0.18011575123664292" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -78,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsZ-IJ-n1g">
-                                <rect key="frame" x="256" y="296" width="44" height="44"/>
+                                <rect key="frame" x="256" y="232" width="44" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.76573546713776264" blue="0.15599173620399132" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -92,14 +92,6 @@
                                     <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YtB-xH-hhb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chipotle Maps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5r-MN-Htm">
-                                <rect key="frame" x="102.5" y="28" width="116" height="24"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.35002709537572252" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -108,7 +100,6 @@
                             <constraint firstItem="UY5-h3-X9t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5Ht-6Z-kCe"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UY5-h3-X9t" secondAttribute="bottom" id="7LC-w2-Qbf"/>
                             <constraint firstAttribute="trailing" secondItem="PWC-4E-KDA" secondAttribute="trailing" id="BlY-EV-K2S"/>
-                            <constraint firstItem="i5r-MN-Htm" firstAttribute="centerX" secondItem="PWC-4E-KDA" secondAttribute="centerX" id="Df0-dk-7BQ"/>
                             <constraint firstItem="PWC-4E-KDA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GG1-Ws-lRQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PWC-4E-KDA" secondAttribute="bottom" constant="44" id="IJi-bd-T12"/>
                             <constraint firstItem="D2N-Eo-zp3" firstAttribute="top" secondItem="CsZ-IJ-n1g" secondAttribute="bottom" constant="18" id="QqU-qN-QrK"/>
@@ -118,9 +109,9 @@
                             <constraint firstItem="dvP-o2-5IN" firstAttribute="top" secondItem="D2N-Eo-zp3" secondAttribute="bottom" constant="23" id="m28-n9-rmf"/>
                             <constraint firstAttribute="trailing" secondItem="UY5-h3-X9t" secondAttribute="trailing" id="qXb-sW-BSB"/>
                             <constraint firstAttribute="trailing" secondItem="CsZ-IJ-n1g" secondAttribute="trailing" constant="20" id="swr-aI-CWs"/>
-                            <constraint firstItem="i5r-MN-Htm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="uqX-Rx-BX9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Chipotle Maps" id="Yah-yA-7fy"/>
                     <connections>
                         <outlet property="mapView" destination="PWC-4E-KDA" id="fXd-vW-D4S"/>
                         <segue destination="dEo-P9-4CE" kind="modal" identifier="AddReminderSegue" id="fzR-38-NUF"/>
@@ -133,7 +124,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="149" y="319"/>
+            <point key="canvasLocation" x="1213" y="319"/>
         </scene>
         <!--Set Reminder-->
         <scene sceneID="xVa-3j-moU">
@@ -155,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wze-XB-rh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="319"/>
+            <point key="canvasLocation" x="2206" y="319"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x8f-Xz-74C">
@@ -174,7 +165,50 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Cd-cs-Nfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="319"/>
+            <point key="canvasLocation" x="1674" y="319"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Yr-6r-3og">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ld-gm-zgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="6Mv-y5-Cor" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dpm-FI-dNs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lIM-IC-NMW" kind="relationship" relationship="rootViewController" id="7IP-8w-1ge"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="149" y="319"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gQV-51-e8t">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lIM-IC-NMW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="aF6-uj-9Zz"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="RDH-Go-lAv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Eag-m2-qv3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dt0-UW-kYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="681" y="319"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.71322399377822876" blue="0.6938139796257019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
