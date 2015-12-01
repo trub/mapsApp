@@ -13,6 +13,11 @@
 		E1CA07701C03CA5F001E52D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1CA076E1C03CA5F001E52D1 /* Main.storyboard */; };
 		E1CA07721C03CA5F001E52D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1CA07711C03CA5F001E52D1 /* Assets.xcassets */; };
 		E1CA07751C03CA5F001E52D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1CA07731C03CA5F001E52D1 /* LaunchScreen.storyboard */; };
+		E1CA077D1C03CB49001E52D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CA077C1C03CB49001E52D1 /* MapKit.framework */; };
+		E1CA07831C046A3D001E52D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CA07821C046A3D001E52D1 /* CoreLocation.framework */; };
+		E1CA07871C05B968001E52D1 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CA07861C05B968001E52D1 /* Stack.m */; };
+		E1CA07901C05BC17001E52D1 /* LocationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CA078F1C05BC17001E52D1 /* LocationAPI.m */; };
+		E1CA07D51C0CFBF5001E52D1 /* AddReminderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CA07D41C0CFBF5001E52D1 /* AddReminderDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,14 @@
 		E1CA07711C03CA5F001E52D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1CA07741C03CA5F001E52D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1CA07761C03CA5F001E52D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1CA077C1C03CB49001E52D1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E1CA07821C046A3D001E52D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E1CA07851C05B968001E52D1 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		E1CA07861C05B968001E52D1 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		E1CA078E1C05BC17001E52D1 /* LocationAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAPI.h; sourceTree = "<group>"; };
+		E1CA078F1C05BC17001E52D1 /* LocationAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAPI.m; sourceTree = "<group>"; };
+		E1CA07D31C0CFBF5001E52D1 /* AddReminderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderDetailViewController.h; sourceTree = "<group>"; };
+		E1CA07D41C0CFBF5001E52D1 /* AddReminderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CA07831C046A3D001E52D1 /* CoreLocation.framework in Frameworks */,
+				E1CA077D1C03CB49001E52D1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +57,10 @@
 		E1CA07591C03CA5F001E52D1 = {
 			isa = PBXGroup;
 			children = (
+				E1CA07841C05B926001E52D1 /* Frameworks */,
 				E1CA07641C03CA5F001E52D1 /* mapsApp */,
 				E1CA07631C03CA5F001E52D1 /* Products */,
+				E1CA07D21C0CF7D6001E52D1 /* Code Challenges */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +75,10 @@
 		E1CA07641C03CA5F001E52D1 /* mapsApp */ = {
 			isa = PBXGroup;
 			children = (
-				E1CA07681C03CA5F001E52D1 /* AppDelegate.h */,
-				E1CA07691C03CA5F001E52D1 /* AppDelegate.m */,
-				E1CA076B1C03CA5F001E52D1 /* ViewController.h */,
-				E1CA076C1C03CA5F001E52D1 /* ViewController.m */,
-				E1CA076E1C03CA5F001E52D1 /* Main.storyboard */,
-				E1CA07711C03CA5F001E52D1 /* Assets.xcassets */,
-				E1CA07731C03CA5F001E52D1 /* LaunchScreen.storyboard */,
-				E1CA07761C03CA5F001E52D1 /* Info.plist */,
+				E1CA07CF1C0CF199001E52D1 /* Delegate */,
+				E1CA07D11C0CF1B2001E52D1 /* Controllers */,
+				E1CA07CE1C0CF08F001E52D1 /* Model */,
+				E1CA07D01C0CF1A5001E52D1 /* View */,
 				E1CA07651C03CA5F001E52D1 /* Supporting Files */,
 			);
 			path = mapsApp;
@@ -74,9 +87,68 @@
 		E1CA07651C03CA5F001E52D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E1CA07761C03CA5F001E52D1 /* Info.plist */,
 				E1CA07661C03CA5F001E52D1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1CA07841C05B926001E52D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA07821C046A3D001E52D1 /* CoreLocation.framework */,
+				E1CA077C1C03CB49001E52D1 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1CA07CE1C0CF08F001E52D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA078E1C05BC17001E52D1 /* LocationAPI.h */,
+				E1CA078F1C05BC17001E52D1 /* LocationAPI.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E1CA07CF1C0CF199001E52D1 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA07681C03CA5F001E52D1 /* AppDelegate.h */,
+				E1CA07691C03CA5F001E52D1 /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		E1CA07D01C0CF1A5001E52D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA076E1C03CA5F001E52D1 /* Main.storyboard */,
+				E1CA07711C03CA5F001E52D1 /* Assets.xcassets */,
+				E1CA07731C03CA5F001E52D1 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E1CA07D11C0CF1B2001E52D1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA076B1C03CA5F001E52D1 /* ViewController.h */,
+				E1CA076C1C03CA5F001E52D1 /* ViewController.m */,
+				E1CA07D31C0CFBF5001E52D1 /* AddReminderDetailViewController.h */,
+				E1CA07D41C0CFBF5001E52D1 /* AddReminderDetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E1CA07D21C0CF7D6001E52D1 /* Code Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA07851C05B968001E52D1 /* Stack.h */,
+				E1CA07861C05B968001E52D1 /* Stack.m */,
+			);
+			name = "Code Challenges";
+			path = mapsApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +183,11 @@
 					E1CA07611C03CA5F001E52D1 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 663S48QXDX;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -150,7 +227,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CA07871C05B968001E52D1 /* Stack.m in Sources */,
+				E1CA07D51C0CFBF5001E52D1 /* AddReminderDetailViewController.m in Sources */,
 				E1CA076D1C03CA5F001E52D1 /* ViewController.m in Sources */,
+				E1CA07901C05BC17001E52D1 /* LocationAPI.m in Sources */,
 				E1CA076A1C03CA5F001E52D1 /* AppDelegate.m in Sources */,
 				E1CA07671C03CA5F001E52D1 /* main.m in Sources */,
 			);
@@ -299,6 +379,7 @@
 				E1CA077B1C03CA5F001E52D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

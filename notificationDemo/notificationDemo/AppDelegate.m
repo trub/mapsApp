@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  mapsApp
+//  notificationDemo
 //
-//  Created by Matthew Weintrub on 11/23/15.
+//  Created by Matthew Weintrub on 11/25/15.
 //  Copyright © 2015 matthew weintrub. All rights reserved.
 //
 
@@ -16,8 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    //add parse
     
     return YES;
 }
@@ -30,6 +28,9 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[NSNotificationCenter
+        defaultCenter]postNotificationName:@"ViewDidAppear" object:nil];
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
