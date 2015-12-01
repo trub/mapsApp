@@ -67,13 +67,41 @@
     [self.locationManager requestWhenInUseAuthorization];
 }
 
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([segue.identifier isEqualToString:@"AddReminderDetailViewController"]) {
+//        if ([segue.destinationViewController isKindOfClass:[AddReminderDetailViewController class]]) {
+//            AddReminderDetailViewController *detailVC = (AddReminderDetailViewController *)segue.destinationViewController;
+//            MKAnnotationView *annotation = (MKAnnotationView *)sender;
+//            detailVC.annotationTitle = annotation.annotation.title;
+//            detailVC.annotationSubtitle = annotation.annotation.subtitle;
+//            
+//            
+//        }
+//    }
+//}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"AddReminderDetailViewController"]) {
-        if ([segue.destinationViewController isKindOfClass:[AddReminderDetailViewController class]]) {
+    if ([segue.identifier isEqualToString:@"AddReminderSegue"]) {
+        if ([sender isKindOfClass:[MKAnnotationView class]]) {
             AddReminderDetailViewController *detailVC = (AddReminderDetailViewController *)segue.destinationViewController;
             MKAnnotationView *annotation = (MKAnnotationView *)sender;
             detailVC.annotationTitle = annotation.annotation.title;
             detailVC.annotationSubtitle = annotation.annotation.subtitle;
+            detailVC.coordinate = annotation.annotation.coordinate;
+
+            __weak typeof(self) weakSelf = self;
+
+            detailVC.completion = ^(MKCircle *circle) {
+
+                [weakSelf.mapView removeAnnotation:annotation.annotation];
+                [weakSelf.mapView addOverlay:circle];
+
+                NSLog(@"%@", [[LocationAPI sharedAPI]locationManager]);
+
+            };
+
+
         }
     }
 }
@@ -81,23 +109,35 @@
 
 #pragma mark - MKMapViewDelegate
 
-- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    if ([annotation isKindOfClass:[MKUserLocation class]]) {
-        return nil;
-    }
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[theMapView dequeueReusableAnnotationViewWithIdentifier:@"CustomLocationPin"];
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]]) { return nil; }
+    
+    // Add view.
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"AnnotationView"];
     annotationView.annotation = annotation;
-    if (!annotationView) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomLocationPin"];
+    
+    if(!annotationView) {
+        annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
     }
-    annotationView.canShowCallout = YES;
+    
+    annotationView.canShowCallout = true;
     UIButton *rightCallout = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     annotationView.rightCalloutAccessoryView = rightCallout;
+    
     return annotationView;
 }
 
-- (void)mapView:(MKMapView *)theMapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     [self performSegueWithIdentifier:@"AddReminderSegue" sender:view];
+}
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    MKCircleRenderer *circleRenderer = [[MKCircleRenderer alloc] initWithOverlay:overlay];
+    circleRenderer.strokeColor = [UIColor blueColor];
+    circleRenderer.fillColor = [UIColor redColor];
+    circleRenderer.alpha = 0.5;
+    return circleRenderer;
 }
 
 #pragma mark - LocationServiceDelegate

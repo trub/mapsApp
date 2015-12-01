@@ -9,7 +9,6 @@
 @import UIKit;
 @import MapKit;
 
-
 @interface ViewController : UIViewController {
     MKMapView *mapView;
 }
