@@ -6,14 +6,17 @@
 //  Copyright © 2015 matthew weintrub. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-@import CoreLocation;
+@import UIKit;
+@import MapKit;
+
+typedef void(^AddReminderDetailViewControllerCompletion)(MKCircle *circle);
 
 @interface AddReminderDetailViewController : UIViewController
 
+@property (copy, nonatomic) AddReminderDetailViewControllerCompletion completion;
 @property (strong, nonatomic) NSString* annotationTitle;
 @property (strong, nonatomic) NSString* annotationSubtitle;
-@property CLLocationCoordinate2D coordinate;
+@property (nonatomic)CLLocationCoordinate2D coordinate;
 
 
 @end

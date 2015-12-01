@@ -35,6 +35,7 @@
 		E1CA07F51C0D1CF9001E52D1 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CA07EF1C0D1CF9001E52D1 /* ParseFacebookUtilsV4.framework */; };
 		E1CA07F61C0D1CF9001E52D1 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CA07F01C0D1CF9001E52D1 /* ParseTwitterUtils.framework */; };
 		E1CA07F71C0D1CF9001E52D1 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CA07F11C0D1CF9001E52D1 /* ParseUI.framework */; };
+		E1CA07FA1C0D3097001E52D1 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CA07F91C0D3097001E52D1 /* Reminder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,8 @@
 		E1CA07EF1C0D1CF9001E52D1 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		E1CA07F01C0D1CF9001E52D1 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		E1CA07F11C0D1CF9001E52D1 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		E1CA07F81C0D3097001E52D1 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		E1CA07F91C0D3097001E52D1 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +131,8 @@
 			children = (
 				E1CA07CF1C0CF199001E52D1 /* Delegate */,
 				E1CA07D11C0CF1B2001E52D1 /* Controllers */,
-				E1CA07CE1C0CF08F001E52D1 /* Model */,
+				E1CA07FB1C0D309B001E52D1 /* Model */,
+				E1CA07CE1C0CF08F001E52D1 /* API */,
 				E1CA07D01C0CF1A5001E52D1 /* View */,
 				E1CA07651C03CA5F001E52D1 /* Supporting Files */,
 			);
@@ -170,13 +174,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E1CA07CE1C0CF08F001E52D1 /* Model */ = {
+		E1CA07CE1C0CF08F001E52D1 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				E1CA078E1C05BC17001E52D1 /* LocationAPI.h */,
 				E1CA078F1C05BC17001E52D1 /* LocationAPI.m */,
 			);
-			name = Model;
+			name = API;
 			sourceTree = "<group>";
 		};
 		E1CA07CF1C0CF199001E52D1 /* Delegate */ = {
@@ -217,6 +221,15 @@
 			);
 			name = "Code Challenges";
 			path = mapsApp;
+			sourceTree = "<group>";
+		};
+		E1CA07FB1C0D309B001E52D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1CA07F81C0D3097001E52D1 /* Reminder.h */,
+				E1CA07F91C0D3097001E52D1 /* Reminder.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +314,7 @@
 				E1CA07901C05BC17001E52D1 /* LocationAPI.m in Sources */,
 				E1CA076A1C03CA5F001E52D1 /* AppDelegate.m in Sources */,
 				E1CA07671C03CA5F001E52D1 /* main.m in Sources */,
+				E1CA07FA1C0D3097001E52D1 /* Reminder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "AddReminderDetailViewController.h"
 #import <Parse/Parse.h>
+#import "LocationAPI.h"
 
 @interface AddReminderDetailViewController ()
 
