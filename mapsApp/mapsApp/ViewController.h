@@ -8,9 +8,6 @@
 
 @import UIKit;
 @import MapKit;
-@import CoreLocation;
-#import "LocationAPI.h"
-#import "AddReminderDetailViewController.h"
 
 @interface ViewController : UIViewController {
     MKMapView *mapView;
